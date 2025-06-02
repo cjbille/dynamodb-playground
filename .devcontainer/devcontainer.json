@@ -14,7 +14,9 @@
 				"editor.minimap.enabled": false,
 				"java.server.launchMode": "Standard",
 				"terminal.integrated.fontSize": 13,
-				"java.configuration.updateBuildConfiguration": "automatic"
+				"java.configuration.updateBuildConfiguration": "automatic",
+				"terminal.integrated.shellIntegration.enabled": false,
+				"terminal.integrated.cursorBlinking": true
 			}
 		}
 	}
