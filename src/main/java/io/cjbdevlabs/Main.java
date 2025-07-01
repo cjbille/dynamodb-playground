@@ -16,7 +16,8 @@ public class Main {
     public static class AppStart implements QuarkusApplication {
         
         @Override
-        public int run(String... args) throws Exception {
+        public int run(String... args) {
+            log.infof("The thread is: %s, and is it a daemon? %s", Thread.currentThread().getName(), Thread.currentThread().isDaemon());
             Quarkus.waitForExit();
             return 0;
         }
