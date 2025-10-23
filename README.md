@@ -28,3 +28,25 @@ This section lists basic DynamoDB commands
 
 ## List Tables
 - `aws dynamodb list-tables --endpoint-url http://localhost:8000`
+
+## Create Table
+```
+--table-name players \
+--attribute-definitions \
+  AttributeName=playerId,AttributeType=S \
+  AttributeName=country,AttributeType=S \
+--key-schema \
+  AttributeName=playerId,KeyType=HASH \
+  AttributeName=country,KeyType=RANGE \
+--billing-mode PAY_PER_REQUEST \
+--endpoint-url http://localhost:8000
+```
+- Attributes in `key-schema` must also be in `attribute-definitions`
+- Partition Key is known as a HASH attribute
+- Sort Key is known as a Range attribute
+
+## Describe Table
+`aws dynamodb describe-table --table-name players --endpoint-url http://localhost:8000`
+
+## Put Item to Table
+`aws dynamodb put-item --table-name players --item '{"playerId": {"S": "player01"}, "country": {"S": "USA"}}' --endpoint-url http://localhost:8000`
