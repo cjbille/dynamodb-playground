@@ -23,7 +23,7 @@ EOF
 - Start DynamoDB: `java -Djava.library.path=/Path/To/DynamoDBLocal_lib -jar /Path/To/DynamoDBLocal.jar -sharedDb
 `
 
-# DynamodDB Commands
+# DynamoDB Commands
 This section lists basic DynamoDB commands
 
 ## List Tables
