@@ -31,6 +31,7 @@ This section lists basic DynamoDB commands
 
 ## Create Table
 ```
+aws dynamodb create-table \
 --table-name players \
 --attribute-definitions \
   AttributeName=playerId,AttributeType=S \
@@ -45,8 +46,21 @@ This section lists basic DynamoDB commands
 - Partition Key is known as a HASH attribute
 - Sort Key is known as a Range attribute
 
+## List All Tables
+`aws dynamodb list-tables --endpoint-url http://localhost:8000`
+
 ## Describe Table
 `aws dynamodb describe-table --table-name players --endpoint-url http://localhost:8000`
 
-## Put Item to Table
+## Put Item into Table
 `aws dynamodb put-item --table-name players --item '{"playerId": {"S": "player01"}, "country": {"S": "USA"}}' --endpoint-url http://localhost:8000`
+
+## Get Item from Table
+`aws dynamodb get-item --table-name players --key '{"playerId": {"S": "player01"}, "country": {"S": "USA"}}' --endpoint-url http://localhost:8000`
+
+## Retrieve All Items from Table
+`aws dynamodb scan --table-name players --endpoint-url http://localhost:8000`
+
+## Delete Table
+`aws dynamodb delete-table --table-name players --endpoint-url http://localhost:8000`
+
